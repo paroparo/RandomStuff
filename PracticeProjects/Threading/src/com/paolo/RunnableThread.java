@@ -1,25 +1,25 @@
 package com.paolo;
 
-public class RunnableDemo implements Runnable {
+public class RunnableThread extends Thread{
     private Thread t;
     private String threadName;
 
-    RunnableDemo(String name) {
+    RunnableThread (String name){
         threadName = name;
         System.out.println("Creating " + threadName);
     }
 
     @Override
     public void run(){
-        System.out.println("Running " + threadName);
+        System.out.println("Starting " + threadName);
 
         try{
-            for (int i=5 ; i > 0; i--){
-                System.out.println("Thread " + threadName + "," + i);
+            for (int i = 5; i > 0; i--){
+                System.out.println("Thread " + threadName + "," +i);
                 t.sleep(5000);
             }
         } catch (InterruptedException e){
-            System.out.println("Thread  " + threadName + " interrupted.");
+            System.out.println("Thread " + threadName + " interrupted.");
         }
         System.out.println("Thread " + threadName + " exiting.");
     }
@@ -32,4 +32,3 @@ public class RunnableDemo implements Runnable {
         }
     }
 }
-
