@@ -24,5 +24,11 @@ public class StreamSample {
         List<String> strings2 = Arrays.asList("Chopper", "the", "best", "dog", "ever");
         String filtered = strings2.stream().filter(string2 -> !string2.isEmpty()).collect(Collectors.joining(" "));
         System.out.println(filtered);
+        System.out.println("==============================");
+        List<String> sampleString = new ArrayList<>();
+        sampleString.add("String 1");
+        sampleString.add("String 2");
+        boolean isExists = sampleString.stream().anyMatch(element -> element.contains("3"));
+        System.out.println(isExists);
     }
 }
